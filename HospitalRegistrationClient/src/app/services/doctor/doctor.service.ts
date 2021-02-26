@@ -1,35 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Doctor } from 'src/app/models/doctor';
+import { BASE_API_URL } from 'src/app/constants/app-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
 
-  private baseUrl : string;
+	constructor(private httpClient : HttpClient) {}
 
-	constructor(private httpClient : HttpClient) { 
-		this.baseUrl = "localhost:4200";
-	}
-
-  public getDoctors() {
-    return this.httpClient.get(`${this.baseUrl}/api/doctors`);
+  public getDoctors(): Observable<Array<Doctor>> {
+    return this.httpClient.get<Array<Doctor>>(`${BASE_API_URL}/api/doctors/`);
   }
 
-  public getDoctorById(id: number) {
-    return this.httpClient.get(`${this.baseUrl}/api/doctors/${id}`);
+  public getDoctorById(id: number): Observable<Doctor> {
+    return this.httpClient.get<Doctor>(`${BASE_API_URL}/api/doctors/${id}`);
   }
 
-  public createDoctor(id : number, entity : string) {  
-    return this.httpClient.post(`${this.baseUrl}/api/doctors/`, entity);
+  public createDoctor(doctor : Doctor): Observable<Doctor> {  
+    return this.httpClient.post<Doctor>(`${BASE_API_URL}/api/doctors/`, doctor);
   }
 
-  public updateDoctor(entity : string, id : number) {   
-    return this.httpClient.put(`${this.baseUrl}/api/doctors/${id}`, entity);
+  public updateDoctor(doctor : Doctor, id : number): Observable<Doctor> {   
+    return this.httpClient.put<Doctor>(`${BASE_API_URL}/api/doctors/${id}`, doctor);
   }
 
-  public deleteDoctor(id: number) {
-    return this.httpClient.delete(`${this.baseUrl}/api/doctors/${id}`);
+  public deleteDoctor(id: number): Observable<Doctor> {
+    return this.httpClient.delete<Doctor>(`${BASE_API_URL}/api/doctors/${id}`);
   }
-  
+
 }
