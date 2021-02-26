@@ -1,4 +1,4 @@
-package DomainModels;
+package com.devtest.DomainModels;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import Audit.AuditableEntity;
+import com.devtest.Audit.AuditableEntity;
 
 @Entity
 @Table(name="medical_appointment_note")

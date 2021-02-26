@@ -1,4 +1,4 @@
-package Audit;
+package com.devtest.Audit;
 
 import java.util.Date;
 
