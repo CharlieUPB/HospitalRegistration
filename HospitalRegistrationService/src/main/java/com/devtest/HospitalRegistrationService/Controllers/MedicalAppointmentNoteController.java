@@ -1,4 +1,4 @@
-package com.devtest.Controllers;
+package com.devtest.HospitalRegistrationService.Controllers;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devtest.DomainModels.MedicalAppointmentNote;
-import com.devtest.Services.MedicalAppointmentNoteService;
+import com.devtest.HospitalRegistrationService.DomainModels.MedicalAppointmentNote;
+import com.devtest.HospitalRegistrationService.Services.MedicalAppointmentNoteService;
 
 @RestController
 @RequestMapping("/medicalAppointmentNotes")

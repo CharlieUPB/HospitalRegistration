@@ -1,4 +1,4 @@
-package com.devtest.DomainModels;
+package com.devtest.HospitalRegistrationService.DomainModels;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.devtest.Audit.AuditableEntity;
+import com.devtest.HospitalRegistrationService.Audit.AuditableEntity;
 
 @Entity
 @Table(name="hospital")

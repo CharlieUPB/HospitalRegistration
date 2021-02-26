@@ -1,4 +1,4 @@
-package com.devtest.Services;
+package com.devtest.HospitalRegistrationService.Services;
 
 import java.util.List;
 

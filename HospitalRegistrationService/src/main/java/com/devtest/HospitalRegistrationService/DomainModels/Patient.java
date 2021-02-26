@@ -1,4 +1,4 @@
-package com.devtest.DomainModels;
+package com.devtest.HospitalRegistrationService.DomainModels;
 
 import java.util.Date;
 import java.util.Set;
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.devtest.Audit.AuditableEntity;
+import com.devtest.HospitalRegistrationService.Audit.AuditableEntity;
 
 @Entity
 @Table(name="patient")

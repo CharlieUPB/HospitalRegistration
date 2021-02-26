@@ -1,4 +1,4 @@
-package com.devtest.Audit;
+package com.devtest.HospitalRegistrationService.Audit;
 
 import java.util.Date;
 

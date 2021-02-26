@@ -1,4 +1,4 @@
-package com.devtest.Controllers;
+package com.devtest.HospitalRegistrationService.Controllers;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -15,41 +15,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devtest.DomainModels.Patient;
-import com.devtest.Services.PatientService;
+import com.devtest.HospitalRegistrationService.DomainModels.Hospital;
+import com.devtest.HospitalRegistrationService.Services.HospitalService;
 
 @RestController
-@RequestMapping("/patients")
-public class PatientController {
+@RequestMapping("/hospitals")
+public class HospitalController {
 
     @Autowired
-	private PatientService patientService;
+	private HospitalService hospitalService;
 	
 	@GetMapping("")
-    public List<Patient> list() {
-        return patientService.listAllEntities();
+    public List<Hospital> list() {
+        return hospitalService.listAllEntities();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Patient> get(@PathVariable Long id) {
+    public ResponseEntity<Hospital> get(@PathVariable Long id) {
         try {
-            Patient patient = patientService.getEntity(id);
-            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+            Hospital hospital = hospitalService.getEntity(id);
+            return new ResponseEntity<Hospital>(hospital, HttpStatus.OK);
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Hospital>(HttpStatus.NOT_FOUND);
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody Patient patient) {
-        patientService.saveEntity(patient);
+    public void add(@RequestBody Hospital hospital) {
+        hospitalService.saveEntity(hospital);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Patient patient, @PathVariable Long id) {
+    public ResponseEntity<?> update(@RequestBody Hospital hospital, @PathVariable Long id) {
         try {
-            Patient existPatient = patientService.getEntity(id);
-            patient.setId(id);       
-            patientService.saveEntity(patient);
+            Hospital existhospital = hospitalService.getEntity(id);
+            hospital.setId(id);       
+            hospitalService.saveEntity(hospital);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -57,6 +57,6 @@ public class PatientController {
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        patientService.deleteEntity(id);
+        hospitalService.deleteEntity(id);
     }
 }

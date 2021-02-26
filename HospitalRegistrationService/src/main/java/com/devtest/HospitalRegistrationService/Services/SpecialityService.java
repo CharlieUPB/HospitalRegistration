@@ -1,11 +1,11 @@
-package com.devtest.Services;
+package com.devtest.HospitalRegistrationService.Services;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.devtest.DomainModels.Speciality;
-import com.devtest.Repositories.SpecialityRepository;
+import com.devtest.HospitalRegistrationService.DomainModels.Speciality;
+import com.devtest.HospitalRegistrationService.Repositories.SpecialityRepository;
 
 @Service
 @Transactional

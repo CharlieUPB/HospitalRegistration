@@ -1,8 +1,8 @@
-package com.devtest.Repositories;
+package com.devtest.HospitalRegistrationService.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.devtest.DomainModels.Speciality;
+import com.devtest.HospitalRegistrationService.DomainModels.Speciality;
 
 public interface SpecialityRepository extends JpaRepository<Speciality, Long> {
 
