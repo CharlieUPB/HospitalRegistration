@@ -25,7 +25,7 @@ public class DoctorController {
 	@Autowired
 	private DoctorService doctorService;
 	
-	@GetMapping("")
+	@GetMapping("/")
     public List<Doctor> list() {
         return doctorService.listAllEntities();
     }
@@ -40,17 +40,17 @@ public class DoctorController {
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody Doctor doctor) {
-        doctorService.saveEntity(doctor);
+    public Doctor add(@RequestBody Doctor doctor) {
+        return doctorService.saveEntity(doctor);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Doctor doctor, @PathVariable Long id) {
+    public ResponseEntity<Doctor> update(@RequestBody Doctor doctor, @PathVariable Long id) {
         try {
             Doctor existDoctor = doctorService.getEntity(id);
             doctor.setId(id);       
-            doctorService.saveEntity(doctor);
-            return new ResponseEntity<>(HttpStatus.OK);
+            Doctor updatedDoctor = doctorService.saveEntity(doctor);
+            return new ResponseEntity<>(updatedDoctor, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

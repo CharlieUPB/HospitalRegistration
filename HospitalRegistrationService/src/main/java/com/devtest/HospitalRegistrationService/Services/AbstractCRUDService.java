@@ -19,8 +19,8 @@ public abstract class AbstractCRUDService<T, K extends JpaRepository<T, Long>> {
 		return repository.findAll();
 	}
 	
-	public void saveEntity(T entity) {
-		repository.save(entity);
+	public T saveEntity(T entity) {
+		return repository.save(entity);
 	}
 	
 	public T getEntity(Long id) {

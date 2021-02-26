@@ -25,7 +25,7 @@ public class PatientController {
     @Autowired
 	private PatientService patientService;
 	
-	@GetMapping("")
+	@GetMapping("/")
     public List<Patient> list() {
         return patientService.listAllEntities();
     }
@@ -40,17 +40,17 @@ public class PatientController {
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody Patient patient) {
-        patientService.saveEntity(patient);
+    public Patient add(@RequestBody Patient patient) {
+        return patientService.saveEntity(patient);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Patient patient, @PathVariable Long id) {
+    public ResponseEntity<Patient> update(@RequestBody Patient patient, @PathVariable Long id) {
         try {
             Patient existPatient = patientService.getEntity(id);
             patient.setId(id);       
-            patientService.saveEntity(patient);
-            return new ResponseEntity<>(HttpStatus.OK);
+            Patient updatedPatient = patientService.saveEntity(patient);
+            return new ResponseEntity<>(updatedPatient, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

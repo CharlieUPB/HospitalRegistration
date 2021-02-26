@@ -25,7 +25,7 @@ public class SpecialityController {
     @Autowired
 	private SpecialityService specialityService;
 	
-	@GetMapping("")
+	@GetMapping("/")
     public List<Speciality> list() {
         return specialityService.listAllEntities();
     }
@@ -40,21 +40,22 @@ public class SpecialityController {
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody Speciality speciality) {
-        specialityService.saveEntity(speciality);
+    public Speciality add(@RequestBody Speciality speciality) {
+        return specialityService.saveEntity(speciality);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Speciality speciality, @PathVariable Long id) {
+    public ResponseEntity<Speciality> update(@RequestBody Speciality speciality, @PathVariable Long id) {
         try {
             Speciality existSpeciality = specialityService.getEntity(id);
             speciality.setId(id);       
-            specialityService.saveEntity(speciality);
-            return new ResponseEntity<>(HttpStatus.OK);
+            Speciality updatedSpeciality = specialityService.saveEntity(speciality);
+            return new ResponseEntity<>(updatedSpeciality, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         specialityService.deleteEntity(id);

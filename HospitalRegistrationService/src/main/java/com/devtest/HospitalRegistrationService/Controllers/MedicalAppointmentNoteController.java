@@ -25,7 +25,7 @@ public class MedicalAppointmentNoteController {
     @Autowired
 	private MedicalAppointmentNoteService medicalAppointmentNoteService;
 	
-	@GetMapping("")
+	@GetMapping("/")
     public List<MedicalAppointmentNote> list() {
         return medicalAppointmentNoteService.listAllEntities();
     }
@@ -40,17 +40,17 @@ public class MedicalAppointmentNoteController {
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody MedicalAppointmentNote medicalAppointmentNote) {
-        medicalAppointmentNoteService.saveEntity(medicalAppointmentNote);
+    public MedicalAppointmentNote add(@RequestBody MedicalAppointmentNote medicalAppointmentNote) {
+        return medicalAppointmentNoteService.saveEntity(medicalAppointmentNote);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody MedicalAppointmentNote medicalAppointmentNote, @PathVariable Long id) {
+    public ResponseEntity<MedicalAppointmentNote> update(@RequestBody MedicalAppointmentNote medicalAppointmentNote, @PathVariable Long id) {
         try {
             MedicalAppointmentNote existMedicalAppointmentNote = medicalAppointmentNoteService.getEntity(id);
             medicalAppointmentNote.setId(id);       
-            medicalAppointmentNoteService.saveEntity(medicalAppointmentNote);
-            return new ResponseEntity<>(HttpStatus.OK);
+            MedicalAppointmentNote updatedNote = medicalAppointmentNoteService.saveEntity(medicalAppointmentNote);
+            return new ResponseEntity<>(updatedNote, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

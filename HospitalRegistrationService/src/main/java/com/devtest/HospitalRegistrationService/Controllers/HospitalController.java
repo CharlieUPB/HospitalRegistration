@@ -25,7 +25,7 @@ public class HospitalController {
     @Autowired
 	private HospitalService hospitalService;
 	
-	@GetMapping("")
+	@GetMapping("/")
     public List<Hospital> list() {
         return hospitalService.listAllEntities();
     }
@@ -40,17 +40,17 @@ public class HospitalController {
         }
     }
     @PostMapping("/")
-    public void add(@RequestBody Hospital hospital) {
-        hospitalService.saveEntity(hospital);
+    public Hospital add(@RequestBody Hospital hospital) {
+        return hospitalService.saveEntity(hospital);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Hospital hospital, @PathVariable Long id) {
+    public ResponseEntity<Hospital> update(@RequestBody Hospital hospital, @PathVariable Long id) {
         try {
             Hospital existhospital = hospitalService.getEntity(id);
             hospital.setId(id);       
-            hospitalService.saveEntity(hospital);
-            return new ResponseEntity<>(HttpStatus.OK);
+            Hospital updatedHospital = hospitalService.saveEntity(hospital);
+            return new ResponseEntity<Hospital>(updatedHospital, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
