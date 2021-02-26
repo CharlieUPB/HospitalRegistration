@@ -1,5 +1,9 @@
 package com.devtest.Repositories;
 
-public interface PatientRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.devtest.DomainModels.Patient;
+
+public interface PatientRepository extends JpaRepository<Patient, Long> {
 
 }
