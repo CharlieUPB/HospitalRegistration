@@ -1,4 +1,4 @@
-package DomainModels;
+package com.devtest.HospitalRegistrationService.DomainModels;
 
 import java.util.Date;
 import java.util.Set;
@@ -7,14 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import Audit.AuditableEntity;
+import com.devtest.HospitalRegistrationService.Audit.AuditableEntity;
 
 @Entity
-@Table(name="patient")
-public class Patient extends AuditableEntity {
+@Table(name="doctor")
+public class Doctor extends AuditableEntity {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
@@ -30,7 +33,14 @@ public class Patient extends AuditableEntity {
 
 	private String profilePicture;
 
-	@OneToMany(mappedBy = "patient")
+	@ManyToMany
+	@JoinTable(
+			name = "doctor_speciality",
+			joinColumns = @JoinColumn(name = "doctor_id"),
+			inverseJoinColumns = @JoinColumn(name = "speciality_id"))
+	private Set<Speciality> specialities;
+
+	@OneToMany(mappedBy = "doctor")
 	private Set<MedicalAppointmentNote> medicalAppointmentNotes;
 
 	public Long getId() {
@@ -79,6 +89,14 @@ public class Patient extends AuditableEntity {
 
 	public void setProfilePicture(String profilePicture) {
 		this.profilePicture = profilePicture;
+	}
+
+	public Set<Speciality> getSpecialities() {
+		return specialities;
+	}
+
+	public void setSpecialities(Set<Speciality> specialities) {
+		this.specialities = specialities;
 	}
 
 	public Set<MedicalAppointmentNote> getMedicalAppointmentNotes() {
