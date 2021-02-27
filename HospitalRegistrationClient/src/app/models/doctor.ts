@@ -1,4 +1,3 @@
-import { Interface } from "readline";
 import { MedicalAppointmentNote } from './medicalAppointmentNote';
 import { Speciality } from './speciality';
 
