@@ -12,23 +12,23 @@ export class HospitalService {
   constructor(private httpClient : HttpClient) {}
 
   public getHospitals(): Observable<Array<Hospital>> {
-    return this.httpClient.get<Array<Hospital>>(`${BASE_API_URL}/api/hospitals/`);
+    return this.httpClient.get<Array<Hospital>>(`${BASE_API_URL}/hospitals/`);
   }
 
   public getHospitalById(id: number): Observable<Hospital> {
-    return this.httpClient.get<Hospital>(`${BASE_API_URL}/api/hospitals/${id}`);
+    return this.httpClient.get<Hospital>(`${BASE_API_URL}/hospitals/${id}`);
   }
 
   public createHospital(Hospital : Hospital): Observable<Hospital> {  
-    return this.httpClient.post<Hospital>(`${BASE_API_URL}/api/hospitals/`, Hospital);
+    return this.httpClient.post<Hospital>(`${BASE_API_URL}/hospitals/`, Hospital);
   }
 
   public updateHospital(Hospital : Hospital, id : number): Observable<Hospital> {   
-    return this.httpClient.put<Hospital>(`${BASE_API_URL}/api/hospitals/${id}`, Hospital);
+    return this.httpClient.put<Hospital>(`${BASE_API_URL}/hospitals/${id}`, Hospital);
   }
 
   public deleteHospital(id: number): Observable<Hospital> {
-    return this.httpClient.delete<Hospital>(`${BASE_API_URL}/api/hospitals/${id}`);
+    return this.httpClient.delete<Hospital>(`${BASE_API_URL}/hospitals/${id}`);
   }
 
 }

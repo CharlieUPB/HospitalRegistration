@@ -11,11 +11,11 @@ import { Speciality } from 'src/app/models/speciality';
 export class SpecialityRegistrationComponent {
 
   specialityModel: Speciality = {
+    id: -1,
     name: '',
     description: '',
     doctors: [],
-    iconIdentifier: '',
-    id: 0
+    iconIdentifier: ''
   };
   
   specialityConfig = RegisterSpecialityFormConfig;

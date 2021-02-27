@@ -35,13 +35,12 @@ export class DynamicGridComponent implements OnInit {
       ];
   }
 
-  modelDeleteClicked(id: number) {
-    this.onModelDelete.emit(id);
+  modelDeleteClicked(data: any) {
+    this.onModelDelete.emit(data);
   }
 
-  modelUpdateClicked(id: number) {
-    this.onModelUpdate.emit(id);
+  modelUpdateClicked(data: any) {
+    this.onModelUpdate.emit(data);
   }
-  
 
 }

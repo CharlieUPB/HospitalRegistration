@@ -12,6 +12,7 @@ import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AgGridModule } from 'ag-grid-angular';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
@@ -30,6 +31,7 @@ import { SearchDoctorComponent } from './components/search/search-doctor/search-
 import { SearchPatientComponent } from './components/search/search-patient/search-patient.component';
 import { SearchSpecialityComponent } from './components/search/search-speciality/search-speciality.component';
 import { SearchNoteComponent } from './components/search/search-note/search-note.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,11 +56,13 @@ import { SearchNoteComponent } from './components/search/search-note/search-note
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatDatepickerModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
+    MatSnackBarModule,
     MatNativeDateModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
     FormlyMaterialModule,

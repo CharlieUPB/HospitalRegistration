@@ -11,13 +11,13 @@ import { Patient } from 'src/app/models/patient';
 export class PatientRegistrationComponent {
 
   patientModel: Patient = {
+    id: -1,
     name: '',
     address: '',
     birthdate: null,
     lastName: '',
     medicalAppointmentNotes: [],
-    profilePicture: '',
-    id: 0
+    profilePicture: ''
   };
   
   patientConfig = RegisterPatientFormConfig;

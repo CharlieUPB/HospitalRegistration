@@ -11,6 +11,7 @@ import { Doctor } from 'src/app/models/doctor';
 export class DoctorRegistrationComponent {
 
   doctorModel: Doctor = {
+    id: -1,
     name: '',
     address: '',
     birthdate: null,
@@ -18,7 +19,6 @@ export class DoctorRegistrationComponent {
     medicalAppointmentNotes: [],
     profilePicture: '',
     specialities: [],
-    id: 0
   };
   
   doctorConfig = RegisterDoctorFormConfig;

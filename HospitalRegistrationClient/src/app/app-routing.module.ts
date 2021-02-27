@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'doctors', component: DoctorRegistrationComponent },
   { path: 'hospitals', component: HospitalRegistrationComponent },
+  { path: 'hospitals/:id', component: HospitalRegistrationComponent },
   { path: 'notes', component: MedicalAppointmentNoteRegistrationComponent },
   { path: 'patients', component: PatientRegistrationComponent },
   { path: 'specialities', component: SpecialityRegistrationComponent },

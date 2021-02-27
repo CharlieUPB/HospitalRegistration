@@ -5,10 +5,7 @@
     <formly-form [form]="form" [fields]="fieldsConfig" [model]="model" [options]="formOptions"></formly-form>
     <div class="form-buttons-container">
       <button class="form-button" type="submit" mat-raised-button color="primary">Submit</button>
-      <button class="form-button" type="button" mat-raised-button color="warn" (click)="formOptions.resetModel()">Reset</button>
+      <button class="form-button" type="button" mat-raised-button color="warn" (click)="cleanModel()">Reset</button>
     </div>
   </form>
-  <pre>
-    {{model | json}}
-  </pre>
 </div>

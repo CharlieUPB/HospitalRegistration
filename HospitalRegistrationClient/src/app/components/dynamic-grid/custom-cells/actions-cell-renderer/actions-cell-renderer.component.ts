@@ -11,16 +11,17 @@ export class ActionsCellRendererComponent {
 
   agInit(params): void {
     this.params = params;
+    console.log(params);
   }
 
   updateCellClicked() {
-    const index = this.params.rowIndex;
-    this.params.updateClicked(index);
+    const data = this.params.data;
+    this.params.updateClicked(data);
   }
 
   deleteCellClicked() {
-    const index = this.params.rowIndex;
-    this.params.deleteClicked(index);
+    const data = this.params.data;
+    this.params.deleteClicked(data);
   }
 
 }

@@ -11,7 +11,7 @@ import { MedicalAppointmentNote } from 'src/app/models/medicalAppointmentNote';
 export class MedicalAppointmentNoteRegistrationComponent {
 
   noteModel: MedicalAppointmentNote = {
-    id: 0,
+    id: -1,
     date: null,
     description: '',
     doctor: null,
