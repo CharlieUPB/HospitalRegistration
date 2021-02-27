@@ -10,6 +10,8 @@ export class DynamicGridComponent implements OnInit {
 
   @Input() columnsConfig;
   @Input() columnsData;
+  @Input() gridTitle;
+  @Input() gridSubtitle;
   @Output() onModelDelete = new EventEmitter<any>();
   @Output() onModelUpdate = new EventEmitter<any>();
 

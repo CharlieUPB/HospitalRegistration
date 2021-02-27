@@ -14,6 +14,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AgGridModule } from 'ag-grid-angular';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { AppComponent } from './app.component';
@@ -64,6 +66,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatSnackBarModule,
     MatNativeDateModule,
+    MatSidenavModule,
+    MatListModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
     FormlyMaterialModule,
     FormlyMatDatepickerModule,

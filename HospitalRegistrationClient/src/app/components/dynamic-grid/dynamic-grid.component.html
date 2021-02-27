@@ -1,9 +1,13 @@
-<ag-grid-angular
-    class="ag-theme-alpine dynamic-grid"
-    [rowData]="columnsData"
-    [columnDefs]="columnsConfig"
-    [frameworkComponents]="frameworkComponents"
-    [gridOptions]="gridOptions"
-    [suppressMenuHide]="true"
->
-</ag-grid-angular>
+<div class="grid-container">
+    <h1>{{gridTitle}}</h1>
+    <p>{{gridSubtitle}}</p>
+    <ag-grid-angular
+        class="ag-theme-alpine dynamic-grid"
+        [rowData]="columnsData"
+        [columnDefs]="columnsConfig"
+        [frameworkComponents]="frameworkComponents"
+        [gridOptions]="gridOptions"
+        [suppressMenuHide]="true"
+    >
+    </ag-grid-angular>
+</div>
