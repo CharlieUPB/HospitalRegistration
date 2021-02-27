@@ -1,0 +1,8 @@
+<app-dynamic-form
+    [formTitle]="title"
+    [formSubtitle]="subtitle"
+    [model]="noteModel"
+    [fieldsConfig]="noteConfig"
+    [formOptions]="options"
+    (onModelSave)="saveNote($event)"
+></app-dynamic-form>

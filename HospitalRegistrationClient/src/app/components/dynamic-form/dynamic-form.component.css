@@ -1,0 +1,22 @@
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.form-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-button {
+    width: 150px;
+}
+
+formly-form {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+:host::ng-deep.mat-checkbox-layout{
+    margin-right: 25px;
+}

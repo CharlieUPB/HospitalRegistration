@@ -1,0 +1,8 @@
+<app-dynamic-form
+    [formTitle]="title"
+    [formSubtitle]="subtitle"
+    [model]="doctorModel"
+    [fieldsConfig]="doctorConfig"
+    [formOptions]="options"
+    (onModelSave)="saveDoctor($event)"
+></app-dynamic-form>

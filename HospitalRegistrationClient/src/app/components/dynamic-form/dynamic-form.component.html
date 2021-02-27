@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{formTitle}}</h1>
+  <p>{{formSubtitle}}</p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <formly-form [form]="form" [fields]="fieldsConfig" [model]="model" [options]="formOptions"></formly-form>
+    <div class="form-buttons-container">
+      <button class="form-button" type="submit" mat-raised-button color="primary">Submit</button>
+      <button class="form-button" type="button" mat-raised-button color="warn" (click)="cleanModel()">Reset</button>
+    </div>
+  </form>
+</div>
