@@ -16,6 +16,16 @@ public class Hospital extends AuditableEntity {
 	@Id
 	private Long id;
 	
+	public Hospital() {
+		
+	}
+	
+	public Hospital(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+
 	private String name;
 	
 	private String description;
