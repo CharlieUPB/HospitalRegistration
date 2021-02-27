@@ -30,8 +30,8 @@ export class DynamicGridComponent implements OnInit {
 
   ngOnInit() {
     this.columnsConfig = [
-      ...this.columnsConfig,
-      this.actionsConfig
+      this.actionsConfig,
+      ...this.columnsConfig
       ];
   }
 

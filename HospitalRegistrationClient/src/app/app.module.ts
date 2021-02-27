@@ -26,6 +26,10 @@ import { DynamicGridComponent } from './components/dynamic-grid/dynamic-grid.com
 import { HomeComponent } from './components/home/home.component';
 import { SearchHospitalComponent } from './components/search/search-hospital/search-hospital.component';
 import { ActionsCellRendererComponent } from './components/dynamic-grid/custom-cells/actions-cell-renderer/actions-cell-renderer.component';
+import { SearchDoctorComponent } from './components/search/search-doctor/search-doctor.component';
+import { SearchPatientComponent } from './components/search/search-patient/search-patient.component';
+import { SearchSpecialityComponent } from './components/search/search-speciality/search-speciality.component';
+import { SearchNoteComponent } from './components/search/search-note/search-note.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { ActionsCellRendererComponent } from './components/dynamic-grid/custom-c
     NavBarComponent,
     DynamicGridComponent,
     SearchHospitalComponent,
-    ActionsCellRendererComponent
+    ActionsCellRendererComponent,
+    SearchDoctorComponent,
+    SearchPatientComponent,
+    SearchSpecialityComponent,
+    SearchNoteComponent
   ],
   imports: [
     BrowserModule,

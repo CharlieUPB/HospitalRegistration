@@ -1,20 +1,55 @@
-<mat-grid-list cols="2">
+<mat-grid-list cols="2" [gutterSize]="'50px'">
     <mat-grid-tile>HOSPITALS LIST</mat-grid-tile>
     <mat-grid-tile>
-        <div>
+        <div class="operations-container">
             <section>
-                <div class="example-button-row">
-                  <button [routerLink]="'/doctors'" mat-raised-button color="primary">Doctors</button>
+                <div class="button-row">
+                  <button [routerLink]="'/hospitals'" mat-raised-button color="primary">Register Hospitals</button>
                 </div>
             </section>
             <section>
-                <div class="example-button-row">
-                    <button [routerLink]="'/patients'" mat-raised-button color="primary">Patients</button>
+                <div class="button-row">
+                  <button [routerLink]="'/searchHospitals'" mat-raised-button color="primary">Search Hospitals</button>
                 </div>
             </section>
             <section>
-                <div class="example-button-row">
-                    <button [routerLink]="'/specialities'" mat-raised-button color="primary">Specialities</button>
+                <div class="button-row">
+                  <button [routerLink]="'/doctors'" mat-raised-button color="primary">Register Doctors</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                  <button [routerLink]="'/searchDoctors'" mat-raised-button color="primary">Search Doctors</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                    <button [routerLink]="'/patients'" mat-raised-button color="primary">Register Patients</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                    <button [routerLink]="'/searchPatients'" mat-raised-button color="primary">Search Patients</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                    <button [routerLink]="'/specialities'" mat-raised-button color="primary">Register Specialities</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                    <button [routerLink]="'/searchSpecialities'" mat-raised-button color="primary">Search Specialities</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                  <button [routerLink]="'/notes'" mat-raised-button color="primary">Register Notes</button>
+                </div>
+            </section>
+            <section>
+                <div class="button-row">
+                  <button [routerLink]="'/searchNotes'" mat-raised-button color="primary">Search Notes</button>
                 </div>
             </section>
         </div> 

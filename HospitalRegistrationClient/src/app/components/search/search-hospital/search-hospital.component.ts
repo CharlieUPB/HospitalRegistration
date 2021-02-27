@@ -8,15 +8,9 @@ import { HospitalGridConfig } from 'src/app/configs/grid-configs/hospital.grid.c
 })
 export class SearchHospitalComponent {
 
-
   columnsConfig = HospitalGridConfig;
 
-  columnsData = [
-    { id : 1, name : "Los Olivos", description : "Los Olivos" },
-    { id : 2, name : "Belga", description : "El belga" },
-    { id : 3, name : "Cordes", description : "El Cordes" },
-    { id : 4, name : "Caja Bancaria", description : "La Caja Bancaria" },
-  ];
+  columnsData = [];
 
   deleteHospital(id: number) {
     console.log('I will delete hospital with Id' , id);

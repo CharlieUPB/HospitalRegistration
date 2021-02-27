@@ -7,7 +7,11 @@ import { HospitalRegistrationComponent } from './components/registration/hospita
 import { MedicalAppointmentNoteRegistrationComponent } from './components/registration/medical-appointment-note-registration/medical-appointment-note-registration.component';
 import { PatientRegistrationComponent } from './components/registration/patient-registration/patient-registration.component';
 import { SpecialityRegistrationComponent } from './components/registration/speciality-registration/speciality-registration.component';
+import { SearchDoctorComponent } from './components/search/search-doctor/search-doctor.component';
 import { SearchHospitalComponent } from './components/search/search-hospital/search-hospital.component';
+import { SearchNoteComponent } from './components/search/search-note/search-note.component';
+import { SearchPatientComponent } from './components/search/search-patient/search-patient.component';
+import { SearchSpecialityComponent } from './components/search/search-speciality/search-speciality.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +21,10 @@ const routes: Routes = [
   { path: 'patients', component: PatientRegistrationComponent },
   { path: 'specialities', component: SpecialityRegistrationComponent },
   { path: 'searchHospitals', component: SearchHospitalComponent },
+  { path: 'searchDoctors', component: SearchDoctorComponent },
+  { path: 'searchNotes', component: SearchNoteComponent },
+  { path: 'searchPatients', component: SearchPatientComponent },
+  { path: 'searchSpecialities', component: SearchSpecialityComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
