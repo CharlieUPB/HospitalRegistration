@@ -28,6 +28,15 @@ public class Speciality extends AuditableEntity {
 
 	@ManyToMany(mappedBy = "specialities")
 	private Set<Doctor> doctors;
+	
+	public Speciality() {}
+
+	public Speciality(String name, String description, String iconIdentifier) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.iconIdentifier = iconIdentifier;
+	}
 
 	public Long getId() {
 		return id;
