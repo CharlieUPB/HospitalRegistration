@@ -39,7 +39,7 @@ export class DoctorRegistrationComponent implements OnInit {
         const loadedSpecialities = [];
         for(let i=0; i<res.length; i++) {
           loadedSpecialities.push({
-            value: res[i],
+            value: res[i].id,
             label: res[i].name
           });
         }
@@ -53,15 +53,17 @@ export class DoctorRegistrationComponent implements OnInit {
         this.subtitle = `Please enter all the required fields to update the Doctor with ID ${this.currentID}`
         this.service.getDoctorById(this.currentID).subscribe((res) => {
           this.doctorModel = res;
+          this.doctorModel.specialities = this.doctorModel.specialities.map(speciality => speciality.id) as any;
         });
       } else {
         this.title =  "Register a new Doctor";
         this.subtitle = "Please enter all the required fields to register a new Doctor";
       }
-    });    
+    });
   }
 
   saveDoctor(doctor: Doctor) {
+    doctor.specialities = doctor.specialities.map(speciality => { return { id: speciality }}) as any
     if(this.currentID) {
       this.service.updateDoctor(doctor, this.currentID).subscribe((res) => {
         this.snackbarService.showMessage('Doctor Successfully Updated', 'Close');

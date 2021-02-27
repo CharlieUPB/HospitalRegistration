@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HospitalGridConfig } from 'src/app/configs/grid-configs/hospital.grid.config';
 import { Hospital } from 'src/app/models/hospital';
@@ -25,7 +24,6 @@ export class SearchHospitalComponent implements OnInit {
 
   deleteHospital(data: Hospital) {
     this.service.deleteHospital(data.id).subscribe((res) => {
-      console.log(res);
       this.snackbarService.showMessage('Hospital Successfully Deleted', 'Close');
       this.columnsData = this.service.getHospitals();
     });

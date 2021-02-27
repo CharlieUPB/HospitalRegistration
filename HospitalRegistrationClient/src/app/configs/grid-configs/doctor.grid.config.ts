@@ -4,5 +4,8 @@ export const DoctorGridConfig = [
     { field: 'lastName', sortable: true, filter: true},
     { field: 'birthdate', sortable: true, filter: true },
     { field: 'address', sortable: true, filter: true },
-    { field: 'specialities', sortable: true, filter: true }
+    { field: 'specialities',
+        tooltipField: 'specialities' ,
+        sortable: true, 
+        filter: true }
 ];

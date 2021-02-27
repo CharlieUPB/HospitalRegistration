@@ -26,6 +26,10 @@ export class DynamicGridComponent implements OnInit {
     },
     minWidth: 150,
   }
+
+  gridOptions = {
+    enableBrowserTooltips: true
+  }
     
 
   ngOnInit() {

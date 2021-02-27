@@ -42,7 +42,6 @@ export class HospitalRegistrationComponent implements OnInit {
     });
   }
  
-
   saveHospital(hospital: Hospital) {
     if(this.currentID) {
       this.service.updateHospital(hospital, this.currentID).subscribe((res) => {

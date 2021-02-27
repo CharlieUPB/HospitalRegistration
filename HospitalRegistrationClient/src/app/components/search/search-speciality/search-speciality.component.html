@@ -1,6 +1,6 @@
 <app-dynamic-grid
     [columnsConfig]="columnsConfig"
-    [columnsData]="columnsData"
+    [columnsData]="columnsData | async"
     (onModelDelete)="deleteSpeciality($event)"
     (onModelUpdate)="updateSpeciality($event)"
 >

@@ -1,7 +1,9 @@
-<app-dynamic-grid
+<div *ngIf="columnsData">
+    <app-dynamic-grid
     [columnsConfig]="columnsConfig"
     [columnsData]="columnsData"
     (onModelDelete)="deleteDoctor($event)"
     (onModelUpdate)="updateDoctor($event)"
->
-</app-dynamic-grid>
+    >
+    </app-dynamic-grid>
+</div>

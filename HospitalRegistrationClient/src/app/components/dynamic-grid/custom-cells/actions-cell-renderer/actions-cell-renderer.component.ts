@@ -11,7 +11,6 @@ export class ActionsCellRendererComponent {
 
   agInit(params): void {
     this.params = params;
-    console.log(params);
   }
 
   updateCellClicked() {
