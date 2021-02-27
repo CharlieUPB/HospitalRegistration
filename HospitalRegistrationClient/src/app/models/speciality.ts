@@ -1,7 +1,7 @@
 import { Doctor } from './doctor';
 
 export interface Speciality {
-    id : string;
+    id : number;
     name : string;
     description : string;
     iconIdentifier : string;

@@ -11,12 +11,12 @@ export class DynamicFormComponent {
   
   @Input() formTitle: string;
   @Input() formSubtitle: string;
+  @Input() formOptions: FormlyFormOptions;
   @Input() model: any;
   @Input() fieldsConfig: FormlyFieldConfig[];
   @Output() onModelSave = new EventEmitter<any>();
 
-  form = new FormGroup({})
-  options: FormlyFormOptions = {};
+  form = new FormGroup({});
 
   onSubmit() {
 		if (this.form.valid) {

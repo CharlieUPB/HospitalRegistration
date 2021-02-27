@@ -1,0 +1,8 @@
+<app-dynamic-form
+    formTitle="Register a new Patient"
+    formSubtitle="Please enter all the required fields to register a new patient"
+    [model]="patientModel"
+    [fieldsConfig]="patientConfig"
+    [formOptions]="options"
+    (onModelSave)="savePatient($event)"
+></app-dynamic-form>

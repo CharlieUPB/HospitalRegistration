@@ -1,0 +1,8 @@
+<app-dynamic-form
+    formTitle="Register a new Hospital"
+    formSubtitle="Please enter all the required fields to register a new Hospital"
+    [model]="hospitalModel"
+    [fieldsConfig]="hospitalConfig"
+    [formOptions]="options"
+    (onModelSave)="saveHospital($event)"
+></app-dynamic-form>

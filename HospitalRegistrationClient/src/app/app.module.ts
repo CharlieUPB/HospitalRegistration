@@ -14,12 +14,21 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DoctorRegistrationComponent } from './components/registration/doctor-registration/doctor-registration.component';
+import { HospitalRegistrationComponent } from './components/registration/hospital-registration/hospital-registration.component';
+import { PatientRegistrationComponent } from './components/registration/patient-registration/patient-registration.component';
+import { SpecialityRegistrationComponent } from './components/registration/speciality-registration/speciality-registration.component';
+import { MedicalAppointmentNoteRegistrationComponent } from './components/registration/medical-appointment-note-registration/medical-appointment-note-registration.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DynamicFormComponent,
-    DoctorRegistrationComponent
+    DoctorRegistrationComponent,
+    HospitalRegistrationComponent,
+    PatientRegistrationComponent,
+    SpecialityRegistrationComponent,
+    MedicalAppointmentNoteRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,8 @@ import { DoctorRegistrationComponent } from './components/registration/doctor-re
     MatNativeDateModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
     FormlyMaterialModule,
-    FormlyMatDatepickerModule
+    FormlyMatDatepickerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+<app-dynamic-form
+    formTitle="Register the Patient Medical Note For This Appointment"
+    formSubtitle="Please enter all the required information to register a new patient medical note"
+    [model]="noteModel"
+    [fieldsConfig]="noteConfig"
+    [formOptions]="options"
+    (onModelSave)="saveNote($event)"
+></app-dynamic-form>
