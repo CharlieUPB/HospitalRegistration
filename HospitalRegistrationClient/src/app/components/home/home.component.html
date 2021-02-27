@@ -1,22 +1,20 @@
-<app-nav-bar></app-nav-bar>
-  
 <mat-grid-list cols="2">
     <mat-grid-tile>HOSPITALS LIST</mat-grid-tile>
     <mat-grid-tile>
         <div>
             <section>
                 <div class="example-button-row">
-                  <button mat-raised-button color="primary">Doctors</button>
+                  <button [routerLink]="'/doctors'" mat-raised-button color="primary">Doctors</button>
                 </div>
             </section>
             <section>
                 <div class="example-button-row">
-                    <button mat-raised-button color="primary">Patients</button>
+                    <button [routerLink]="'/patients'" mat-raised-button color="primary">Patients</button>
                 </div>
             </section>
             <section>
                 <div class="example-button-row">
-                    <button mat-raised-button color="primary">Specialities</button>
+                    <button [routerLink]="'/specialities'" mat-raised-button color="primary">Specialities</button>
                 </div>
             </section>
         </div> 
