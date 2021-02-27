@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormlyFormOptions } from '@ngx-formly/core';
-import { RegisterNoteFormConfig } from 'src/app/form-configs/medical-appointment-note.config';
+import { RegisterNoteFormConfig } from 'src/app/configs/form-configs/medical-appointment-note.config';
 import { MedicalAppointmentNote } from 'src/app/models/medicalAppointmentNote';
 
 @Component({

@@ -1,16 +1,4 @@
 import { FormlyFieldConfig } from "@ngx-formly/core";
-import { Doctor } from "../models/doctor";
-
-export const EmptyDoctor: Doctor = {
-  name: '',
-  address: '',
-  birthdate: null,
-  lastName: '',
-  medicalAppointmentNotes: [],
-  profilePicture: '',
-  specialities: [],
-  id: 0
-};
 
 export const RegisterDoctorFormConfig: FormlyFieldConfig[] = [
     {

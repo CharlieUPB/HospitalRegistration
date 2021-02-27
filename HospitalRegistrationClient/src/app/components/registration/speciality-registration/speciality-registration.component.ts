@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormlyFormOptions } from '@ngx-formly/core';
-import { RegisterSpecialityFormConfig } from 'src/app/form-configs/speciality.config';
+import { RegisterSpecialityFormConfig } from 'src/app/configs/form-configs/speciality.config';
 import { Speciality } from 'src/app/models/speciality';
 
 @Component({

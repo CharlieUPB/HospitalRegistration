@@ -21,12 +21,14 @@
     "@angular/platform-browser": "~11.2.1",
     "@angular/platform-browser-dynamic": "~11.2.1",
     "@angular/router": "~11.2.1",
+    "@ngx-formly/core": "^5.0.0",
+    "@ngx-formly/material": "^5.0.0",
     "@ngx-formly/schematics": "^5.10.14",
+    "ag-grid-angular": "^25.1.0",
+    "ag-grid-community": "^25.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3",
-    "@ngx-formly/core": "^5.0.0",
-    "@ngx-formly/material": "^5.0.0"
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.1",

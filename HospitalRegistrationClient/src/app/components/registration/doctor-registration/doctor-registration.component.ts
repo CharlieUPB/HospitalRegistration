@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormlyFormOptions } from '@ngx-formly/core';
-import { RegisterDoctorFormConfig } from 'src/app/form-configs/doctor.config';
+import { RegisterDoctorFormConfig } from 'src/app/configs/form-configs/doctor.config';
 import { Doctor } from 'src/app/models/doctor';
 
 @Component({

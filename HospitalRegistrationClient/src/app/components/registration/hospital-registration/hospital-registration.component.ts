@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormlyFormOptions } from '@ngx-formly/core';
-import { RegisterHospitalFormConfig } from 'src/app/form-configs/hospital.config';
+import { RegisterHospitalFormConfig } from 'src/app/configs/form-configs/hospital.config';
 import { Hospital } from 'src/app/models/hospital';
 
 @Component({
