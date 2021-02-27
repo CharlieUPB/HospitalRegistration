@@ -1,6 +1,6 @@
 <app-dynamic-form
-    formTitle="Register a new Medical Speciality"
-    formSubtitle="Please enter all the required fields to register a new medical speciality"
+    [formTitle]="title"
+    [formSubtitle]="subtitle"
     [model]="specialityModel"
     [fieldsConfig]="specialityConfig"
     [formOptions]="options"

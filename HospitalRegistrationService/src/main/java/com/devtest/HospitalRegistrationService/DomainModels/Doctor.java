@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.devtest.HospitalRegistrationService.Audit.AuditableEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="doctor")
@@ -99,6 +100,7 @@ public class Doctor extends AuditableEntity {
 		this.specialities = specialities;
 	}
 
+	@JsonIgnore
 	public Set<MedicalAppointmentNote> getMedicalAppointmentNotes() {
 		return medicalAppointmentNotes;
 	}

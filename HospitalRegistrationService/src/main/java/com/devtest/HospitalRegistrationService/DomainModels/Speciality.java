@@ -10,6 +10,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.devtest.HospitalRegistrationService.Audit.AuditableEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="speciality")
@@ -27,6 +28,15 @@ public class Speciality extends AuditableEntity {
 
 	@ManyToMany(mappedBy = "specialities")
 	private Set<Doctor> doctors;
+	
+	public Speciality() {}
+
+	public Speciality(String name, String description, String iconIdentifier) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.iconIdentifier = iconIdentifier;
+	}
 
 	public Long getId() {
 		return id;
@@ -60,6 +70,7 @@ public class Speciality extends AuditableEntity {
 		this.iconIdentifier = iconIdentifier;
 	}
 
+	@JsonIgnore
 	public Set<Doctor> getDoctors() {
 		return doctors;
 	}

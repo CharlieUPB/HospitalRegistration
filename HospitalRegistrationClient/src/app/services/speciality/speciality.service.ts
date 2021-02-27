@@ -12,23 +12,23 @@ export class SpecialityService {
   constructor(private httpClient : HttpClient) {}
 
   public getSpecialities(): Observable<Array<Speciality>> {
-    return this.httpClient.get<Array<Speciality>>(`${BASE_API_URL}/api/specialities/`);
+    return this.httpClient.get<Array<Speciality>>(`${BASE_API_URL}/specialities/`);
   }
 
   public getSpecialityById(id: number): Observable<Speciality> {
-    return this.httpClient.get<Speciality>(`${BASE_API_URL}/api/specialities/${id}`);
+    return this.httpClient.get<Speciality>(`${BASE_API_URL}/specialities/${id}`);
   }
 
   public createSpeciality(Speciality : Speciality): Observable<Speciality> {  
-    return this.httpClient.post<Speciality>(`${BASE_API_URL}/api/specialities/`, Speciality);
+    return this.httpClient.post<Speciality>(`${BASE_API_URL}/specialities/`, Speciality);
   }
 
   public updateSpeciality(Speciality : Speciality, id : number): Observable<Speciality> {   
-    return this.httpClient.put<Speciality>(`${BASE_API_URL}/api/specialities/${id}`, Speciality);
+    return this.httpClient.put<Speciality>(`${BASE_API_URL}/specialities/${id}`, Speciality);
   }
 
   public deleteSpeciality(id: number): Observable<Speciality> {
-    return this.httpClient.delete<Speciality>(`${BASE_API_URL}/api/specialities/${id}`);
+    return this.httpClient.delete<Speciality>(`${BASE_API_URL}/specialities/${id}`);
   }
 
 }

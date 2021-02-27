@@ -1,16 +1,4 @@
 import { FormlyFieldConfig } from "@ngx-formly/core";
-import { Doctor } from "../models/doctor";
-
-export const EmptyDoctor: Doctor = {
-  name: '',
-  address: '',
-  birthdate: null,
-  lastName: '',
-  medicalAppointmentNotes: [],
-  profilePicture: '',
-  specialities: [],
-  id: 0
-};
 
 export const RegisterDoctorFormConfig: FormlyFieldConfig[] = [
     {
@@ -68,18 +56,7 @@ export const RegisterDoctorFormConfig: FormlyFieldConfig[] = [
         placeholder: 'Medical Speciality',
         description: 'Fill in your medical specialities',
         required: true,
-        type: 'array',
-        options: [
-          { value: 1, label: 'Cardio'},
-          { value: 2, label: 'Urologist'},
-          { value: 3, label: 'Ginecologist'},
-          { value: 4, label: 'Cardio'},
-          { value: 5, label: 'Urologist'},
-          { value: 6, label: 'Ginecologist'},
-          { value: 7, label: 'Cardio'},
-          { value: 8, label: 'Urologist'},
-          { value: 9, label: 'Ginecologist'}
-        ]
+        type: 'array'
       }
     }
 ];

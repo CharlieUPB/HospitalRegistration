@@ -1,6 +1,6 @@
 <app-dynamic-form
-    formTitle="Register a new Hospital"
-    formSubtitle="Please enter all the required fields to register a new Hospital"
+    [formTitle]="title"
+    [formSubtitle]="subtitle"
     [model]="hospitalModel"
     [fieldsConfig]="hospitalConfig"
     [formOptions]="options"

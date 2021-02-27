@@ -24,4 +24,8 @@ export class DynamicFormComponent {
     }
   }
 
+  cleanModel() {
+    this.model = {};
+  }
+
 }

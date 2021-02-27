@@ -1,0 +1,11 @@
+<div *ngIf="columnsData">
+    <app-dynamic-grid
+    gridTitle="Doctors List"
+    gridSubtitle="Search for Doctor, Update or Delete them"
+    [columnsConfig]="columnsConfig"
+    [columnsData]="columnsData"
+    (onModelDelete)="deleteDoctor($event)"
+    (onModelUpdate)="updateDoctor($event)"
+    >
+    </app-dynamic-grid>
+</div>

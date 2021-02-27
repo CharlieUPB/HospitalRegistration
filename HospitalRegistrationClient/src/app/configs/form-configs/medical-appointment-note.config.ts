@@ -23,20 +23,24 @@ export const RegisterNoteFormConfig: FormlyFieldConfig[] = [
     },
     {
         key: 'patient',
-        type: 'input',
+        type: 'select',
         templateOptions: {
           label: 'Patient',
           placeholder: 'Enter patient',
           required: true,
+          labelProp: "name",
+          valueProp: "id" 
         },
     },
     {
         key: 'doctor',
-        type: 'input',
+        type: 'select',
         templateOptions: {
           label: 'Doctor',
           placeholder: 'Enter Doctor',
-          required: true
+          required: true,
+          labelProp: "name",
+          valueProp: "id" 
         },
     }
 ];

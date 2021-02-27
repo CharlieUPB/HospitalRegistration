@@ -1,0 +1,7 @@
+<app-dynamic-grid
+    [columnsConfig]="columnsConfig"
+    [columnsData]="columnsData | async"
+    (onModelDelete)="deletePatient($event)"
+    (onModelUpdate)="updatePatient($event)"
+>
+</app-dynamic-grid>
