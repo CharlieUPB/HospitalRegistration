@@ -20,34 +20,32 @@ export class HospitalRegistrationComponent implements OnInit {
   };
   hospitalConfig = RegisterHospitalFormConfig;
   options: FormlyFormOptions = {};
-  currentHospitalId;
-
+  currentID;
   title: string;
   subtitle: string;
 
-  constructor(private route: ActivatedRoute, private service: HospitalService,private snackbarService: SnackbarService) {}
-
+  constructor(private route: ActivatedRoute, private service: HospitalService, private snackbarService: SnackbarService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.currentHospitalId= +params.get('id');
-      if (this.currentHospitalId) {
-        this.title = `Update the Hospital with ID ${this.currentHospitalId}`;
-        this.subtitle = `Please enter all the required fields to update the Hospital with ID ${this.currentHospitalId}`
-        this.service.getHospitalById(this.currentHospitalId).subscribe((res) => {
+      this.currentID= +params.get('id');
+      if (this.currentID) {
+        this.title = `Update the Hospital with ID ${this.currentID}`;
+        this.subtitle = `Please enter all the required fields to update the Hospital with ID ${this.currentID}`
+        this.service.getHospitalById(this.currentID).subscribe((res) => {
           this.hospitalModel = res;
         });
       } else {
-        this.title = "Register a new Hospital"
-        this.subtitle = "Please enter all the required fields to register a new Hospital"
+        this.title = "Register a new Hospital";
+        this.subtitle = "Please enter all the required fields to register a new Hospital";
       }
     });
   }
  
 
   saveHospital(hospital: Hospital) {
-    if(this.currentHospitalId) {
-      this.service.updateHospital(hospital, this.currentHospitalId).subscribe((res) => {
+    if(this.currentID) {
+      this.service.updateHospital(hospital, this.currentID).subscribe((res) => {
         this.snackbarService.showMessage('Hospital Successfully Updated', 'Close');
       });
     } else {
@@ -56,7 +54,6 @@ export class HospitalRegistrationComponent implements OnInit {
         this.hospitalModel = {} as any;
       });
     }
-    
   }
   
 }

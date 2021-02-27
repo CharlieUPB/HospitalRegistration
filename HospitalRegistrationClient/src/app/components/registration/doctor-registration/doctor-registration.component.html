@@ -1,6 +1,6 @@
 <app-dynamic-form
-    formTitle="Register a new Doctor"
-    formSubtitle="Please enter all the required fields to register a new Doctor"
+    [formTitle]="title"
+    [formSubtitle]="subtitle"
     [model]="doctorModel"
     [fieldsConfig]="doctorConfig"
     [formOptions]="options"
